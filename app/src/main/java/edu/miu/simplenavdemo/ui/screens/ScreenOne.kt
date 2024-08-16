@@ -11,7 +11,10 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 
 @Composable
-fun ScreenOne(modifier: Modifier = Modifier, navController: NavController) {
+fun ScreenOne(
+    modifier: Modifier = Modifier,
+    navController: NavController
+) {
     Column(
         modifier = modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,

@@ -13,7 +13,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import edu.miu.simplenavdemo.ui.components.TopBar
-import edu.miu.simplenavdemo.ui.navigation.App
+import edu.miu.simplenavdemo.ui.navigation.NavigationGraph
 import edu.miu.simplenavdemo.ui.screens.ScreenOne
 import edu.miu.simplenavdemo.ui.screens.ScreenThree
 import edu.miu.simplenavdemo.ui.screens.ScreenTwo
@@ -27,15 +27,7 @@ class MainActivity : ComponentActivity() {
             SimpleNavDemoTheme {
                 //Create a NavHostController and remember it across recompositions
                 val navHostController: NavHostController = rememberNavController()
-                Scaffold(
-                    modifier = Modifier.fillMaxSize(),
-                    topBar = { TopBar(navHostController = navHostController) }
-                ) { innerPadding ->
-                    App(
-                        navHostController = navHostController,
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                NavigationGraph(navHostController)
             }
         }
     }
